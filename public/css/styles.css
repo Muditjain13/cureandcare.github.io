@@ -1,0 +1,355 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: white;
+    color: #333;
+    padding: 0;
+}
+
+/* Flexbox Box for Layout */
+.box {
+    display: flex;
+    align-items: center; /* Align items vertically centered */
+    justify-content: flex-start; /* Align content from the start (left) */
+    height: 35vh; /* Full height of the viewport */
+    padding: 20px;
+}
+
+    /* Styling for Image */
+    .box img {
+        width: 200px; /* Set the image width */
+        margin-right: 200px; /* Space between image and text */
+    }
+
+/* Text container with flexbox to stack the text vertically */
+.text-container {
+    display: flex;
+    flex-direction: column; /* Stack text vertically */
+    justify-content: center; /* Center text vertically in the container */
+}
+
+/* Hospital name styling */
+.st {
+    font-family: 'MyCustomFont', serif;
+    font-size: 35px; /* Font size for hospital name */
+    font-weight: bold; /* Bold for the hospital name */
+    margin-bottom: 10px; /* Space between the name and address */
+    white-space: pre;
+}
+
+.stb {
+    font-family: 'MyCustomFont', serif;
+    font-size: 35px; /* Font size for hospital name */
+    font-weight: bold; /* Bold for the hospital name */
+    margin-bottom: 10px; /* Space between the name and address */
+    white-space: pre;
+    color: darkturquoise;
+}
+
+/* Font-face for Custom Font */
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('/assets/fonts/Uto-Font-Family/Fontspring-DEMO-uto-bold-BF641d1357e6351') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* Default Navbar (before scrolling) */
+.topnav {
+    background-color: #333;
+    overflow: hidden;
+    display: flex;
+    justify-content: center; /* Horizontally center items */
+    align-items: center; /* Vertically center items */
+    padding: 14px 0; /* Add padding for the navbar */
+    width: 100%;
+    transition: top 0.3s; /* Smooth transition for fixing navbar */
+}
+
+    /* Fixed Navbar (after scrolling down) */
+    .topnav.fixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    /* Navbar Links */
+    .topnav a {
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+        /* Change the color of links on hover */
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        /* Add a color to the active/current link */
+        .topnav a.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+/* Slideshow container */
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    height: 400px; /* Set fixed height */
+}
+
+/* Hide all images by default */
+.slides {
+    position: absolute; /* Stack images on top of each other */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 1.5s ease-in-out; /* Smooth fade transition */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1; /* Ensure the images are on top initially */
+}
+
+    /* Active slide will have opacity 1 to be visible */
+    .slides.active {
+        opacity: 1;
+        z-index: 10; /* Ensure active slide is on top */
+    }
+
+/* Dots container */
+.dot-container {
+    display: flex;
+    justify-content: center;
+    bottom: 10px; /* Position the dots at the bottom of the slideshow */
+    left: 0; /* Align dots to the left */
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    z-index: 20; /* Ensure dots appear above the images */
+}
+
+/* Dot styling */
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+    .dot.active {
+        background-color: #717171;
+    }
+
+
+
+/* Background Image for the container */
+.regbody {
+    background-image: url("../images/reg.jpg");
+    background-size: cover; /* Ensure the image covers the area */
+    background-position: center; /* Center the image */
+    width: 100%;
+    height: 700px; /* Increased height of the container */
+    position: relative; /* To position the card within it */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+   
+    overflow: hidden; /* Ensure that content stays within the rounded borders */
+}
+.appoibody {
+    background-image: url("../images/appoi.jpg");
+    background-size: cover; /* Ensure the image covers the area */
+    background-position: center; /* Center the image */
+    width: 100%;
+    height: 700px; /* Increased height of the container */
+    position: relative; /* To position the card within it */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+
+    overflow: hidden; /* Ensure that content stays within the rounded borders */
+}
+.billingbody {
+    background-image: url("../images/billing.jpg");
+    background-size: cover; /* Ensure the image covers the area */
+    background-position: center; /* Center the image */
+    width: 100%;
+    height: 700px; /* Increased height of the container */
+    position: relative; /* To position the card within it */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+
+    overflow: hidden; /* Ensure that content stays within the rounded borders */
+}
+
+.feedbackbody {
+    background-image: url("../images/feedback.jpg");
+    background-size: cover; /* Ensure the image covers the area */
+    background-position: center; /* Center the image */
+    width: 100%;
+    height: 700px; /* Increased height of the container */
+    position: relative; /* To position the card within it */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+
+    overflow: hidden; /* Ensure that content stays within the rounded borders */
+}
+/* Card styling */
+.card {
+    position: absolute; /* Position inside .regbody */
+    top: 50%; /* Position the card in the center vertically */
+     /* Center the card horizontally */
+    transform: translate(-50%, -50%); /* Perfect centering */
+    padding: 40px; /* Increased padding for a larger card */
+    background-color: rgba(255, 255, 255, 0.9); /* Light semi-transparent background */
+    border-radius: 20px; /* Rounded corners for the card */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Add depth with a stronger shadow */
+    width: 400px; /* Increased width for a bigger card */
+    text-align: center; /* Center text in the card */
+    font-family: 'Arial', sans-serif;
+    color: #333; /* Dark text for contrast */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+/* Card Title */
+.card h3 {
+    margin: 0 0 20px; /* Space below the title */
+    font-size: 28px; /* Larger font size for the title */
+    font-weight: 600;
+    color: #30D5C8; /* Matching the hospital theme color */
+}
+
+/* Card Description */
+.card p {
+    font-size: 18px; /* Larger text for the description */
+    line-height: 1.6;
+    color: #555; /* Lighter text color */
+    margin-bottom: 30px; /* Space below the description */
+}
+
+/* Button styling */
+.card button {
+    padding: 15px 35px; /* Larger padding for the button */
+    background-color: #30D5C8; /* Matching the card title color */
+    color: white;
+    font-size: 18px; /* Larger font size for the button */
+    font-weight: bold;
+    border: none;
+    border-radius: 30px; /* Rounded corners for the button */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Button Hover effect */
+.card button:hover {
+    background-color: #009F94; /* Darken the button on hover */
+    transform: translateY(-4px); /* Slight lift effect */
+}
+
+/* Card Hover effect */
+.card:hover {
+    transform: translate(-50%, -50%) scale(1.05); /* Slightly enlarge the card */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); /* Add a stronger shadow on hover */
+}
+
+/* Optional: Style for the HR line to have rounded corners */
+hr.line {
+    border: 1px solid black;
+    margin-top: 0; /* Remove any default margin */
+    border-radius: 5px; /* Rounded corners for the HR line */
+}
+
+/* Optional: If you want a rounded border for any other content */
+.card-wrapper {
+    border-radius: 15px;
+    overflow: hidden; /* Hide content that exceeds the border */
+}
+/* Style for Input Fields */
+input[type="text"], input[type="email"], input[type="password"], input[type="number"], textarea {
+    padding: 12px 20px; /* Add padding to the input fields for better spacing */
+    font-size: 16px; /* Set font size */
+    border: 2px solid #ccc; /* Border with light color */
+    border-radius: 15px; /* Rounded corners for the input fields */
+    width: 100%; /* Ensure inputs take full width of the container */
+    box-sizing: border-box; /* Ensures padding and borders are included in the width */
+    background-color: #f9f9f9; /* Light background for inputs */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for focus state */
+}
+
+    /* Focus effect when the input field is selected */
+    input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, input[type="number"]:focus, select,textarea:focus {
+        border-color: #30D5C8; /* Change border color on focus */
+        box-shadow: 0 0 8px rgba(48, 213, 200, 0.5); /* Add shadow on focus */
+        outline: none; /* Remove the default focus outline */
+    }
+
+/* Optional: Style for the submit button (if any) */
+input[type="submit"], button {
+    padding: 12px 20px;
+    background-color: #30D5C8; /* Matching color */
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px; /* Rounded corners for the button */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+    /* Hover effect for the submit button */
+    input[type="submit"]:hover, button:hover {
+        background-color: #009F94; /* Darken the button on hover */
+        transform: translateY(-4px); /* Slight lift effect */
+    }
+/* Style for the container that holds the label and input field */
+.form-group {
+    margin-bottom: 20px; /* Space between label/input pairs */
+    display: flex;
+    flex-direction: column; /* Stack label and input vertically */
+}
+
+/* Style for the label */
+label {
+    font-size: 16px; /* Set font size for labels */
+    margin-bottom: 8px; /* Space between label and input */
+    color: #333; /* Dark text color for labels */
+    font-weight: bold;
+}
+
+/* Style for input fields (including text, password, etc.) */
+input[type="text"], input[type="email"], input[type="password"], input[type="number"],input[type="date"],input[type="time"], textarea {
+    padding: 12px 20px; /* Padding for input fields */
+    font-size: 16px; /* Font size for inputs */
+    border: 2px solid #ccc; /* Light border color */
+    border-radius: 15px; /* Rounded corners */
+    width: 100%; /* Full width */
+    background-color: #f9f9f9; /* Light background */
+    box-sizing: border-box; /* Include padding and border in width calculation */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+    /* Focus state for input fields */
+    input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, input[type="number"]:focus, textarea:focus {
+        border-color: #30D5C8; /* Change border color on focus */
+        box-shadow: 0 0 8px rgba(48, 213, 200, 0.5); /* Shadow effect */
+        outline: none; /* Remove default focus outline */
+    }

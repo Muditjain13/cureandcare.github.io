@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Care And Cure Super Speciality Hospital</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <hr class="line">
+    <div class="box">
+        <img src="/images/logo.png" width="109px">
+        <p class="st">Care And Cure Super Speciality Hospital <br>234, Wellness Road, Sector 22, New City, MP, India, 482001</p>
+    </div>
+
+   <div class="topnav" id="navbar">
+        <a href="/patients/register"><i class="fa-solid fa-pen-to-square"></i> Register Patient</a>
+        <a href="/appointments/schedule"><i class="fa-solid fa-calendar-days"></i> Schedule Appointment</a>
+        <a href="/billing/generate"><i class="fa-solid fa-money-check-dollar"></i> Generate Bill</a>
+        <a href="/feedback/submit"><i class="fa-solid fa-comments"></i> Submit Feedback</a>
+        <a href="/prescription/generate"><i class="fa-solid fa-prescription-bottle-medical"></i> Generate Prescription</a>
+    </div>
+
+
+
+    <!-- Slideshow Section -->
+    <div class="slideshow-container">
+        <!-- Loop through images dynamically with EJS -->
+        <% images.forEach(function(image, index) { %>
+            <div class="slides fade">
+                <img src="<%= image.src %>" alt="<%= image.caption %>" style="width: 100%; height: 400px; object-fit: cover;">
+            </div>
+        <% }); %>
+
+        <!-- Navigation Arrows -->
+        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+    </div>
+
+    <!-- Dots -->
+    <div class="dot-container">
+        <% images.forEach(function(image, index) { %>
+            <span class="dot" onclick="currentSlide(<%= index + 1 %>)"></span>
+        <% }); %>
+    </div>
+
+    <script>
+        // Slideshow Script
+        let slideIndex = 1;
+        let slides = document.querySelectorAll(".slides");
+        let dots = document.querySelectorAll(".dot");
+
+        // Show the current slide
+        function showSlides() {
+            if (slideIndex > slides.length) { slideIndex = 1; }
+            if (slideIndex < 1) { slideIndex = slides.length; }
+
+            // Remove active class from all slides and dots
+            slides.forEach(slide => slide.classList.remove("active"));
+            dots.forEach(dot => dot.classList.remove("active"));
+
+            // Add active class to the current slide and dot
+            slides[slideIndex - 1].classList.add("active");
+            dots[slideIndex - 1].classList.add("active");
+        }
+
+        // Next/Previous slide
+        function changeSlide(n) {
+            slideIndex += n;
+            showSlides();
+        }
+
+        // Current slide from dot click
+        function currentSlide(n) {
+            slideIndex = n;
+            showSlides();
+        }
+
+        // Start the slideshow and auto change every 3 seconds
+        setInterval(function() {
+            changeSlide(1);
+        }, 3000);
+
+        // Initialize the slideshow
+        showSlides();
+
+        // Navbar Sticky Functionality
+        const navbar = document.getElementById("navbar");
+        const navbarOffset = navbar.offsetTop;
+
+        // Function to make navbar sticky after scrolling
+        function stickyNavbar() {
+            if (window.pageYOffset > navbarOffset) {
+                navbar.classList.add("fixed");
+            } else {
+                navbar.classList.remove("fixed");
+            }
+        }
+
+        // Listen for scroll event
+        window.onscroll = function() {
+            stickyNavbar();
+        };
+    </script>
+
+    <p class="st" style="color: #4ce600; margin: 20px;">About Us</p>
+    <hr />
+    <br>
+    <p style="margin: 20px; font-weight: bold;">At Care And Cure Super Speciality Hospital, we are committed to delivering exceptional healthcare services with a deep sense of compassion and dedication. Situated in the bustling city of New City, Madhya Pradesh, our hospital brings together the latest in medical technology, world-class healthcare professionals, and patient-centered care to provide a holistic approach to health. With a team of experienced specialists across diverse medical fields, including cardiology, neurology, orthopaedics, oncology, and more, we ensure that our patients receive comprehensive and advanced care tailored to their specific needs. Our hospital is equipped with state-of-the-art diagnostic and therapeutic facilities, designed to offer the highest standards of care in a comfortable and supportive environment. We believe in treating not just the illness, but the person as a whole, fostering long-term relationships with our patients built on trust, respect, and excellence in service. Whether you're here for a routine check-up, emergency care, or specialized treatment, Care And Cure Super Speciality Hospital is here to guide you through every step of your healthcare journey with the utmost care and attention.</p>
+</body>
+</html>
