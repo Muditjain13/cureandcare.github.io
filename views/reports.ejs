@@ -18,7 +18,7 @@
         <p class="st">Care And Cure Super Speciality Hospital <br>234, Wellness Road, Sector 22, New City, MP, India, 482001</p>
     </div>
 
-     <div class="topnav" id="navbar">
+    <div class="topnav" id="navbar">
         <a href="/patients/register"><i class="fa-solid fa-pen-to-square"></i> Register Patient</a>
         <a href="/appointments/schedule"><i class="fa-solid fa-calendar-days"></i> Schedule Appointment</a>
         <a href="/billing/generate"><i class="fa-solid fa-money-check-dollar"></i> Generate Bill</a>
@@ -27,12 +27,7 @@
         <a href="/reports/landing"><i class="fa-solid fa-book-medical"></i> Reports</a>
     </div>
 
-
-
-
     <script>
-       
-
         // Navbar Sticky Functionality
         const navbar = document.getElementById("navbar");
         const navbarOffset = navbar.offsetTop;
@@ -52,53 +47,43 @@
         };
     </script>
 
+    <!-- Form for Adding Records -->
+    <div class="regbody">
+        <div class="card">
+            <h3>Add Records</h3>
+            <form action="/reports/upload" method="POST" class="form-container" enctype="multipart/form-data">
+                <div class="input-group">
+                    <label for="patid">PatientID</label>
+                    <input type="text" name="patid" id="patid" required>
+                </div>
+                <br/>
 
-    <div class="billingbody">
-    <div class="card">
-        <h3>Billing</h3>
-    
-<form action="/billing/generate" method="POST">
-    <div class="input-group">
-        <label>Patient ID:</label>
-         <input type="text" name="patientID" required>        
-    </div>
-    <br/>
-    
-    <div class="input-group">
-        <label>Payment For:</label>
-         <input type="text" name="reason" required>
+                <div class="input-group">
+                    <label for="file">Upload File</label>
+                    <input type="file" name="file" id="file" required>
+                </div>
+                <br/>
 
-
-        
-    </div>
-    <br/>
-    <div class="input-group">
-       <label>Amount:</label>
-        <input type="number" name="amount" min="1" required>
-    </div>
-    <br/>
-    <div class="input-group">
-       <label>Payment Method:</label>
-        <select name="paymentMethod">
-            <option value="Cash">Cash</option>
-            <option value="Card">Card</option>
-            <option value="Insurance">Insurance</option>
-        </select>
-
-    <br/>
-    
-    <br/>
-    <button type="submit" class="submit-btn">Generate Bill</button>
-</form>
-
-    </div>
-</div>
-
-    
-   
-       
+                <button type="submit" class="submit-btn">Register</button>
+            </form>
+        </div>
     </div>
 
-    
+    <!-- Form for Viewing Records -->
+    <div class="regbody">
+        <div class="card">
+            <h3>See Records</h3>
+            <form action="/reports/see" method="GET" class="form-container">
+                <div class="input-group">
+                    <label for="PatientID">PatientID</label>
+                    <input type="text" name="PatientID" id="PatientID" required>
+                </div>
+                <br/>
+
+                <button type="submit" class="submit-btn">View Records</button>
+            </form>
+        </div>
+    </div>
+
 </body>
 </html>

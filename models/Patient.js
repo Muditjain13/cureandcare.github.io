@@ -6,6 +6,7 @@ const patientSchema = new mongoose.Schema({
     address: String,
     phone: String,
     patientID: { type: String, unique: true },
+    severity:Number,
     registrationDate: { type: Date, default: Date.now }
 });
 
