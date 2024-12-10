@@ -353,3 +353,43 @@ input[type="text"], input[type="email"], input[type="password"], input[type="num
         box-shadow: 0 0 8px rgba(48, 213, 200, 0.5); /* Shadow effect */
         outline: none; /* Remove default focus outline */
     }
+
+
+.loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Adjust to perfectly center */
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+#billAmountDisplay {
+    text-decoration: line-through !important;
+    color: red !important;
+}
+
+.checkmark {
+    color: green; /* Make the checkmark green */
+    font-size: 1.5em; /* Increase the size of the checkmark if needed */
+    margin-left: 5px; /* Add a little space between the policy number and the checkmark */
+}
+
+
+#remainingamount {
+    
+    color: green;
+}

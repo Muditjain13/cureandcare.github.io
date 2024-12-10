@@ -27,6 +27,7 @@ const billingRoutes = require("./routes/billingRoutes");
 const feedbackRoutes = require("./routes/feedbackRoutes");
 const PharmacyRoutes = require("./routes/PharmacyRoutes");
 const reports = require("./routes/reports");
+const ins = require('./routes/insuranceroutes');
 // Home route to display images
 app.get("/", (req, res) => {
     const images = [
@@ -48,6 +49,7 @@ app.use("/billing", billingRoutes);
 app.use("/feedback", feedbackRoutes);
 app.use("/prescription", PharmacyRoutes);
 app.use("/reports", reports);
+app.use("/insurance", ins);
 // Set the port for the server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
